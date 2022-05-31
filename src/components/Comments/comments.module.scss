@@ -1,0 +1,184 @@
+.comments {
+  max-width: 715px;
+  margin: 0 auto;
+  margin-top: 25px;
+  &__block {
+    width: 100%;
+  }
+  &__title {
+    font-family: 'Alegreya Sans SC';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 40px;
+    margin: 15px 0;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.41);
+
+  }
+
+  &__list {
+      display: grid;
+      grid-auto-flow: row dense;
+      grid-template-columns: 1fr;
+      gap: 19px 19px;
+  }
+}
+
+.comment {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Open Sans';
+  font-style: normal;
+  color: #000000;
+  &__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+ &__title {
+   margin: 0;
+  margin-right: 5px;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 23px;
+  text-transform: capitalize;
+
+ }
+ &__text {
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.41);
+  margin: 0;
+ }
+
+ &__email {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.41);
+  font-weight: 700;
+ }
+ &__add{
+   margin: 20px 0;
+   text-align: left;
+ }
+ &__btn {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+  padding: 11px 40px;
+  cursor: pointer;
+  border: none;
+  margin-right: 12px;
+  background-color:  #101010;
+  display: block;
+}
+
+&__form {
+  margin-bottom: 15px;
+}
+
+&__form__error {
+  color: red;
+}
+
+&__form__container {
+  border: 1px solid #DADADA;
+  margin: 20px 0;
+  padding: 15px 25px ;
+}
+
+&__form__block {
+  display: flex;
+  align-items: center;
+}
+&__form__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 40px;
+  margin: 0;
+}
+&__form__email, &__form__name {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+
+  input {
+  padding: 10px 10px;
+  border: 1px solid #0D1E4B;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  color: #969696;
+  }
+}
+
+&__form__text {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #0D1E4B;
+  width: 509px;
+  height: 134px;
+  resize: none;
+  padding: 10px 10px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  color: #969696;
+  margin-bottom: 15px;
+  }
+}
+
+.post {
+  padding: 14px 23px 17px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+ &__title {
+   margin: 0;
+   margin-bottom: 4px;
+   text-align: left;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   font-family: 'Open Sans';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 20px;
+   line-height: 23px;
+   text-transform: capitalize;
+ }
+
+ &__text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  color: rgba(0, 0, 0, 0.41);
+  margin: 0;
+  text-align: left;
+ }
+ &__link {
+  text-decoration: none;
+ }
+
+}

@@ -1,0 +1,30 @@
+html {
+  box-sizing: border-box;  /* чтоб паддинги не увеличивали блок */
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;  /* чтоб паддинги не увеличивали блок */
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', 'Alegreya Sans SC', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* убирает подсветку во всех браузерах на input, select, button, a */
+:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
