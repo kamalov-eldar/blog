@@ -1,15 +1,20 @@
-import axios from "axios";
+import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/",
+  baseURL: 'https://jsonplaceholder.typicode.com/',
   headers: {
-    "Content-type": "application/json; charset=UTF-8",
+    'Content-type': 'application/json; charset=UTF-8',
   },
 });
 
 export const usersAPI = {
   async getUsers() {
-    const response = await instance.get("users");
+    const response = await instance.get('users');
+    // console.log("response-Users: ", response);
+    return response.data;
+  },
+  async getUserProfile(userId) {
+    const response = await instance.get(`users/${userId}`);
     // console.log("response-Users: ", response);
     return response.data;
   },
@@ -17,18 +22,17 @@ export const usersAPI = {
 
 export const postsAPI = {
   async getPosts() {
-    const response = await instance.get("posts");
+    const response = await instance.get('posts');
     // console.log("response-Posts: ", response);
     return response.data;
   },
-
   async postComment(postId, valuesForm) {
     const response = await instance.post(`posts/${postId}/comments`, {
       name: valuesForm.name,
       email: valuesForm.email,
       body: valuesForm.comment,
     });
-   // console.log("response-postComment: ", response);
+    // console.log("response-postComment: ", response);
     return response.data;
   },
 };

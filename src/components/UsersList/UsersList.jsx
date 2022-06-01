@@ -1,22 +1,22 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import User from "../User/User";
+import React from 'react';
+import style from './user.module.scss';
+import { NavLink } from 'react-router-dom';
 
-import { requestUsers } from "../../redux/actions";
-
-const UsersList = () => {
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(requestUsers());
-  }, [dispatch]);
-
-  const usersList = useSelector((state) => {
-    return state.usersList;
-  });
-
-  return <User usersList={usersList} />;
+const UserList = ({ usersList }) => {
+  return (
+    <div className={style.userList}>
+      
+      {usersList.map((user) => (
+        <div className={style.user} key={user.id}>
+          <div className={style.user__block}>
+            <NavLink to={'/profile/' + user.id} className={style.user__link}>
+              <span className={style.user__name}>{user.name}</span>
+            </NavLink>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 };
 
-export default UsersList;
+export default UserList;

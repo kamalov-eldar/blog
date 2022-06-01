@@ -1,10 +1,22 @@
-import { SET_USERS } from "./actionsType";
+import { SET_USERS, SET_PROFILE } from './actionsType';
 
-
-const usersReducer = (state = [], action) => {
+const initialState = {
+  users: [],
+  userProfile: {},
+};
+const usersReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USERS: {
-      return [...action.users];
+      return {
+        ...state,
+        users: [...action.users],
+      };
+    }
+    case SET_PROFILE: {
+      return {
+        ...state,
+        userProfile: action.userProfile,
+      };
     }
     default:
       return state;

@@ -6,7 +6,6 @@ import style from "./comments.module.scss";
 
 const CommentForm = (postId) => {
   const dispatch = useDispatch();
-
   const validateForm = (values) => {
     const errors = {};
     if (!values.email) {

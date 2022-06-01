@@ -1,36 +1,33 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import style from "./profile.module.scss";
+import style from './profile.module.scss';
 
-const Profile = ({ userFind, findPosts, userId }) => {
+const Profile = ({ user, findPosts }) => {
   const previewPosts = findPosts.slice(0, 3);
 
-  if (!userFind) {
-    return <>Loading...</>;
-  }
   return (
     <div className={style.profile__user}>
-      <h2 className={style.profile__title}>{userFind.username}</h2>
+      <h2 className={style.profile__title}>{user.username}</h2>
       <div className={style.profile__name}>
         <div className={style.profile__name__block}>
-          <span className={style.profile__name__user}>{userFind.name}</span>
+          <span className={style.profile__name__user}>{user.name}</span>
         </div>
       </div>
       <div className={style.profile}>
         <div className={style.profile__block}>
-          <div className={style.profile__city}>{userFind.address.city}</div>
-          <div className={style.profile__email}>{userFind.email}</div>
-          <div className={style.profile__phone}>{userFind.phone}</div>
+          <div className={style.profile__city}>{user.address.city}</div>
+          <div className={style.profile__email}>{user.email}</div>
+          <div className={style.profile__phone}>{user.phone}</div>
           <button className={style.profile__btn}>Написать сообщение</button>
           <button className={style.profile__btn}>Предложить сходить на концерт</button>
         </div>
       </div>
       <div className={style.profile}>
         <div className={style.profile__block}>
-          <div className={style.profile__website}>{userFind.website}</div>
-          <div className={style.profile__company}>{userFind.company.name}</div>
-          <div className={style.profile__company}>{userFind.company.bs}</div>
+          <div className={style.profile__website}>{user.website}</div>
+          <div className={style.profile__company}>{user.company.name}</div>
+          <div className={style.profile__company}>{user.company.bs}</div>
         </div>
       </div>
       <div className={style.profile__posts}>

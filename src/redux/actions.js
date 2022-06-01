@@ -1,8 +1,15 @@
-import { usersAPI, postsAPI, commentsAPI } from "../utils/api";
-import {} from "../utils/api";
-import { SET_COMMENTS, ADD_COMMENT, SET_USERS, SET_POSTS, SHOW_FORM } from "./actionsType";
+import { usersAPI, postsAPI, commentsAPI } from '../utils/api';
+import {
+  SET_COMMENTS,
+  ADD_COMMENT,
+  SET_USERS,
+  SET_POSTS,
+  SHOW_FORM,
+  SET_PROFILE,
+} from './actionsType';
 
 export const setUsers = (users) => ({ type: SET_USERS, users });
+export const setUserProfile = (userProfile) => ({ type: SET_PROFILE, userProfile });
 export const setPosts = (posts) => ({ type: SET_POSTS, posts });
 export const setComments = (comments) => ({ type: SET_COMMENTS, comments });
 export const addComment = (comment) => ({ type: ADD_COMMENT, comment });
@@ -12,6 +19,13 @@ export const requestUsers = () => {
   return (dispatch) => {
     usersAPI.getUsers().then((responce) => {
       dispatch(setUsers(responce));
+    });
+  };
+};
+export const requestUserProfile = (userId) => {
+  return (dispatch) => {
+    usersAPI.getUserProfile(userId).then((responce) => {
+      dispatch(setUserProfile(responce));
     });
   };
 };

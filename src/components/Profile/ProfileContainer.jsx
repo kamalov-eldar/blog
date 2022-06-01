@@ -1,33 +1,33 @@
-import React, { useEffect } from "react";
-import Profile from "./Profile";
-import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { requestPosts, requestUsers } from "../../redux/actions";
+import React, { useEffect } from 'react';
+import Profile from './Profile';
+import { useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { requestPosts, requestUserProfile } from '../../redux/actions';
 
 const ProfileContainer = () => {
   let params = useParams();
+  const userId = Number(params.id);
 
-  const { usersList, postsList } = useSelector((state) => {
-    return { usersList: state.usersList, postsList: state.postsList };
+  const { userProfile, postsList } = useSelector((state) => {
+    return { userProfile: state.usersPage.userProfile, postsList: state.postsList };
   });
-
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(requestPosts());
-    dispatch(requestUsers());
+    dispatch(requestUserProfile(userId));
   }, []);
 
   const findPosts = [];
   postsList.forEach((element) => {
-    if (element.userId === Number(params.id)) {
+    if (element.userId === userId) {
       findPosts.push(element);
     }
   });
-  const userFind = usersList.find((user) => {
-    return user.id === Number(params.id);
-  });
-
-  return <Profile userFind={userFind} userId={params.id} findPosts={findPosts} />;
+  return !(Object.keys(userProfile).length == 0) ? (
+    <Profile user={userProfile} findPosts={findPosts} />
+  ) : (
+    <>Loading1...</>
+  );
 };
+
 export default ProfileContainer;
