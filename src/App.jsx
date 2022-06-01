@@ -9,7 +9,7 @@ function App() {
   return (
     <div className={style.App}>
       <header className={style.header}>
-        <h1 className={style.header__text}>Blog</h1>
+        <h1 className={style.header__title}>Blog</h1>
       </header>
       <Routes>
         <Route path="/" element={<UsersListContainer />} />

@@ -2,6 +2,9 @@
   max-width: 715px;
   margin: 0 auto;
   margin-top: 25px;
+  &__container {
+    border: 1px solid #000000;
+  }
   &__block {
     width: 100%;
   }

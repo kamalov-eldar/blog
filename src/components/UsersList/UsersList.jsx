@@ -4,8 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const UserList = ({ usersList }) => {
   return (
-    <div className={style.userList}>
-      
+    <div className={style.users__container}>
       {usersList.map((user) => (
         <div className={style.user} key={user.id}>
           <div className={style.user__block}>

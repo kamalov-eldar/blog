@@ -10,7 +10,8 @@
 
   &__user {
     display: block;
-    min-width: 1116px
+    width: 1116px;
+    border: 1px solid #000000;
   }
 
   &__block {

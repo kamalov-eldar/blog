@@ -1,21 +1,17 @@
 .App {
   max-width: 1116px;
   margin: 0 auto;
- /*  border-right: 1px solid black;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black; */
-  border: 1px solid #000000;
 }
 
 .header {
   background-color: #101010;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:flex-start;
   height: 70px;
   padding: 10px 53px 0;
 
-  &__text {
+  &__title {
     font-family: 'Alegreya Sans SC';
     font-style: normal;
     font-weight: 700;

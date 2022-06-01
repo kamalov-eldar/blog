@@ -1,31 +1,31 @@
-# Getting Started with Create React App
+# Blog React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/kamalov-eldar/blog/blob/master/src/img/blog.gif)
 
-## Available Scripts
+## Функционал
 
-In the project directory, you can run:
+1. Список пользователей. Вывод списка, полученного по апи в виде карточек вида
+2. Страница пользователя. Подробный вывод информации о пользователе
+   2.2. Список из 3-х превью (заголовок, 1 строчка текста...) постов пользователя + возможность посмотреть все
+3. Список постов пользователя. Все посты в формате превью + возможность перейти на детальную
+4. Детальная страница поста со списком всех комментариев c именем и email
+   4.2. Кнопка добавления комментария. По клику открывается форма с 3 полями имя, email, текст комментария и кнопкой "отправить/send" Отправку сделать на тот же сервис.
+
+## ToDo
+
+- Сервис API https://jsonplaceholder.typicode.com/
+- Используется Redux, Router
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- запуск приложения локально
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- компиляция/сборка приложения
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Deployment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run deploy` - сборка приложения и выложить на github.pages
 
+готовый сайт -> https://kamalov-eldar.github.io/blog/
